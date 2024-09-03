@@ -1,0 +1,32 @@
+{
+    "application": {
+        "onedrive": {
+            "client_id": "<id>",
+            "client_secret": "<secret>",
+            "redirect_uri": "http://localhost:53682",
+            "refresh_token": "<token>",
+            "grant_type": "refresh_token",
+            "downloadFiles": [
+                {
+                    "path": "<path>",
+                    "folder": true
+                },
+                {
+                    "path": "<file>",
+                    "folder": false
+                }
+            ]
+        },
+        "googledrive": {}
+    },
+    "download": {
+        "aria2": {
+            "api": "http://127.0.0.1:6800/jsonrpc",
+            "params": {
+                "dir": "<path>",
+                "http-proxy": "http://127.0.0.1:10808",
+                "https-proxy": "http://127.0.0.1:10808"
+            }
+        }
+    }
+}
