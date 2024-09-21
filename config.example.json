@@ -22,8 +22,8 @@
     "download": {
         "aria2": {
             "api": "http://127.0.0.1:6800/jsonrpc",
+            "dir": "<path>",
             "params": {
-                "dir": "<path>",
                 "http-proxy": "http://127.0.0.1:10808",
                 "https-proxy": "http://127.0.0.1:10808"
             }
