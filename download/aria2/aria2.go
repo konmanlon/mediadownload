@@ -75,13 +75,18 @@ type RpcError struct {
 }
 
 func Download(opts *Options) (rpcResp *RpcResponse, err error) {
-	p := opts.Conf.Params
-	p["dir"] = opts.Conf.Dir + opts.Dir
+	params := opts.Conf.Params
+
+	if params == nil {
+		params = make(map[string]any)
+	}
+
+	params["dir"] = opts.Conf.Dir + opts.Dir
 
 	payload := newJsonRpc()
 	payload.setId(opts.Id)
 	payload.addUri(opts.Uri)
-	payload.addParams(p)
+	payload.addParams(params)
 
 	data, err := json.Marshal(payload)
 	if err != nil {
